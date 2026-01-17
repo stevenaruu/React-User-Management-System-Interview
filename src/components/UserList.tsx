@@ -19,8 +19,21 @@ function UserList() {
   }, []);
 
   return (
-    <div style={{ display: "flex", gap: "24px" }}>
-      {/* TABLE */}
+    <div>
+      <div>
+        <h2>Add User</h2>
+
+        <div style={{ display: "flex", gap: "8px" }}>
+          <input
+            type="text"
+            placeholder="Nama"
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+          />
+
+          <button onClick={() => setOnClicked(!clicked)}>Tambah</button>
+        </div>
+      </div>
       <div>
         <h2>User List</h2>
 
@@ -42,21 +55,6 @@ function UserList() {
             ))}
           </tbody>
         </table>
-      </div>
-
-      <div>
-        <h2>User List</h2>
-
-        <div style={{ display: "flex", gap: "8px" }}>
-          <input
-            type="text"
-            placeholder="Nama"
-            value={inputValue}
-            onChange={(e) => setInputValue(e.target.value)}
-          />
-
-          <button onClick={() => setOnClicked(!clicked)}>Tambah</button>
-        </div>
       </div>
     </div>
   );
